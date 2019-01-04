@@ -1,7 +1,7 @@
 import { Affix, Button } from 'antd';
 import styles from './affix.css';
 
-export default function() {
+export default function AffixPage() {
   return (
     <div className={styles.normal}>
       <Affix offsetTop={10}>

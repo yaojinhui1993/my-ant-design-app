@@ -8,17 +8,13 @@ function onSelect(value) {
 class AutoCompletePage extends Component {
   state = {
     dataSource: [],
-  }
+  };
 
-  handleSearch = (value) => {
+  handleSearch = value => {
     this.setState({
-      dataSource: !value ? [] : [
-        value,
-        value + value,
-        value + value + value
-      ]
+      dataSource: !value ? [] : [value, value + value, value + value + value],
     });
-  }
+  };
 
   render() {
     const { dataSource } = this.state;
@@ -26,14 +22,15 @@ class AutoCompletePage extends Component {
     return (
       <AutoComplete
         dataSource={dataSource}
-        style={{ width: 200 }}
+        style={{
+          width: 200,
+        }}
         onSelect={onSelect}
         onSearch={this.handleSearch}
         placeholder="input here"
       />
-    )
+    );
   }
-
 }
 
 export default AutoCompletePage;
