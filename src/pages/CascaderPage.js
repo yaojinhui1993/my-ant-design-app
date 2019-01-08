@@ -1,27 +1,8 @@
 import { Cascader } from 'antd';
 
-const options = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'xihu',
-        label: 'West Lake',
-      },
-    ],
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'zhonghuamen',
-        label: 'Zhong Hua Men',
-      },
-    ],
-  },
-];
+import areaJson from '@/components/area_region.json';
+
+const options = areaJson;
 
 function onChange(value) {
   console.log(value);
@@ -33,6 +14,7 @@ export default function CascaderPage() {
       options={options}
       onChange={onChange}
       placeholder="Please select"
+      changeOnSelect
     />
   );
 }
